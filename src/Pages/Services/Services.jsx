@@ -30,12 +30,23 @@ const Services = () => {
     ];
     return (
         <div className="container mx-auto">
-            <div className="">
-                <h1 className="text-6xl italic text-primary font-bold">My Services</h1>
-            </div>
+            <div className="mt-[100px]">
+                <h2 className="text-3xl md:text-6xl font-bold italic text-center">My Services</h2>
+                <p></p>
 
-            <div className="full flex gap-4 flex-wrap">
-
+                <div className="my-5 flex gap-5 justify-center flex-wrap">
+                    {services.map((service, index) => (
+                        <div key={index} className="w-full md:w-1/4 service-card bg-white rounded-lg shadow p-6 flex items-center hover:bg-gray-100 hover:shadow-lg border">
+                            <div className="service-icon bg-primary text-white flex items-center justify-center rounded-full w-12 h-12 mr-4">
+                                <span className={service.icon}></span>
+                            </div>
+                            <div>
+                                <h4 className="text-2xl font-bold mb-2">{service.title}</h4>
+                                <p className="text-gray-700">{service.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
